@@ -30,10 +30,13 @@ class BinaryTree {
         root = null;
     }
 
+
+
     void deleteKey(int key) {
         root = delete_Recursive(root, key);
     }
 
+    //Function to delete the node in binary tree
     Node delete_Recursive(Node root, int key) {
         if (root == null) return root;
 
@@ -66,6 +69,7 @@ class BinaryTree {
         root = insert_Recursive(root, key);
     }
 
+    //Function to insert the node in binary tree
     Node insert_Recursive(Node root, int key) {
         if (root == null) {
             root = new Node(key);
@@ -86,6 +90,7 @@ class BinaryTree {
         System.out.println();
     }
 
+    //Function to do in order traversal
     void inorder_Recursive(Node root) {
         if (root != null) {
             inorder_Recursive(root.left);
@@ -98,6 +103,7 @@ class BinaryTree {
         preorder_Recursive(root);
         System.out.println();
     }
+    //Function to do pre order traversal
     void preorder_Recursive(Node root) {
         if (root != null) {
             System.out.print(root.key + " ");
@@ -110,6 +116,7 @@ class BinaryTree {
         postorder_Recursive(root);
         System.out.println();
     }
+    //Function to do post order traversal
     void postorder_Recursive(Node root) {
         if (root != null) {
             postorder_Recursive(root.left);
@@ -123,6 +130,7 @@ class BinaryTree {
         return root != null;
     }
 
+    //Function to search a node in binary tree
     Node search_Recursive(Node root, int key) {
         if (root == null || root.key == key)
             return root;
@@ -140,6 +148,7 @@ class BinaryTree {
         System.out.println();
     }
 
+    //DFS inplementation using stack
     void dfs_Stack(Node root) {
         if (root == null) return;
 
@@ -167,6 +176,7 @@ class BinaryTree {
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
 
+        //BFS inplementation using Queue
         while (!queue.isEmpty()) {
             Node current = queue.poll();
             System.out.print(current.key + " ");
